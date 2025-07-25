@@ -2,26 +2,6 @@
 
 ## Overview of ML Algorithms and Mathematics
 
-The algorithms are categorized into basic, intermediate, and advanced, with their mathematical foundations, forming the basis of the plan.
-Basic Algorithms (Supervised Learning)
-
-Linear Regression: $ y = w^Tx + b $, minimize MSE $ J(w) = \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)^2 $.
-Logistic Regression: $ P(y=1|x) = \sigma(w^Tx) $, minimize cross-entropy loss.
-Naive Bayes: $ P(y|x) \propto P(y) \prod_{i=1}^n P(x_i|y) $.
-
-Intermediate Algorithms
-
-Decision Trees: Entropy $ H = -\sum_{i=1}^k p_i \log(p_i) $, Information Gain.
-Random Forests: Ensemble via bagging, variance reduction.
-Support Vector Machines (SVM): Maximize margin $ \frac{2}{||w||} $, kernel trick $ K(x_i, x_j) $.
-
-Advanced Algorithms
-
-K-Nearest Neighbors (KNN): Euclidean distance $ d(x, y) = \sqrt{\sum_{i=1}^n (x_i - y_i)^2} $.
-K-Means Clustering: Minimize $ J = \sum_{i=1}^k \sum_{x \in C_i} ||x - \mu_i||^2 $.
-Principal Component Analysis (PCA): Eigenvalue decomposition of covariance matrix.
-Neural Networks: Backpropagation, $ \frac{\partial L}{\partial w} $ via chain rule.
-Gradient Boosting (XGBoost, LightGBM): Minimize $ L = \sum_{i=1}^m l(y_i, \hat{y}_i) + \Omega(f) $.
 
 Mathematical Foundations
 
