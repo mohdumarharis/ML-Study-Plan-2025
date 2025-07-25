@@ -1,319 +1,354 @@
 # ML-Study-Plan-2025
 
-## Overview of ML Algorithms and Mathematics
+# Overview of ML Algorithms and Mathematics
 
+The algorithms are categorized into basic, intermediate, and advanced, with their mathematical foundations, forming the basis of the plan.
 
-Mathematical Foundations
+## Basic Algorithms (Supervised Learning)
 
-Linear Algebra: Matrices, eigenvalues, SVD.
-Calculus: Gradients, optimization (Gradient Descent).
-Probability: Distributions, Bayes’ theorem.
-Optimization: Convex optimization, Lagrange multipliers.
+- **Linear Regression:** $ y = w^Tx + b $, minimize MSE  
+  $$
+  J(w) = \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)^2
+  $$
 
+- **Logistic Regression:** $ P(y=1|x) = \sigma(w^Tx) $, minimize cross-entropy loss.
 
-3-Month Study Plan with Day-Wise Breakdown
+- **Naive Bayes:**  
+  $$
+  P(y|x) \propto P(y) \prod_{i=1}^n P(x_i|y)
+  $$
+
+## Intermediate Algorithms
+
+- **Decision Trees:**  
+  $$
+  H = -\sum_{i=1}^k p_i \log(p_i)
+  $$
+  Information Gain.
+
+- **Random Forests:** Ensemble via bagging, variance reduction.
+
+- **Support Vector Machines (SVM):** Maximize margin  
+  $$
+  \frac{2}{||w||}
+  $$
+  Kernel trick $ K(x_i, x_j) $.
+
+## Advanced Algorithms
+
+- **K-Nearest Neighbors (KNN):** Euclidean distance  
+  $$
+  d(x, y) = \sqrt{\sum_{i=1}^n (x_i - y_i)^2}
+  $$
+
+- **K-Means Clustering:** Minimize  
+  $$
+  J = \sum_{i=1}^k \sum_{x \in C_i} ||x - \mu_i||^2
+  $$
+
+- **Principal Component Analysis (PCA):** Eigenvalue decomposition of covariance matrix.
+
+- **Neural Networks:** Backpropagation,  
+  $$
+  \frac{\partial L}{\partial w}
+  $$
+  via chain rule.
+
+- **Gradient Boosting (XGBoost, LightGBM):** Minimize  
+  $$
+  L = \sum_{i=1}^m l(y_i, \hat{y}_i) + \Omega(f)
+  $$
+
+---
+
+## Mathematical Foundations
+
+- **Linear Algebra:** Matrices, eigenvalues, SVD.
+- **Calculus:** Gradients, optimization (Gradient Descent).
+- **Probability:** Distributions, Bayes’ theorem.
+- **Optimization:** Convex optimization, Lagrange multipliers.
+
+---
+
+# 3-Month Study Plan with Day-Wise Breakdown
+
 The 12-week plan progresses from foundations to advanced topics, with each week requiring 15–20 hours (~2–3 hours/day, 5–6 days/week). Daily tasks cover:
 
-Theory/Mathematics: Reading, derivations (6–8 hours/week).
-Coding: From scratch + libraries (scikit-learn, PyTorch) (5–7 hours/week).
-Practice/Projects: Datasets, experimentation (3–5 hours/week).
+- **Theory/Mathematics:** Reading, derivations (6–8 hours/week).
+- **Coding:** From scratch + libraries (scikit-learn, PyTorch) (5–7 hours/week).
+- **Practice/Projects:** Datasets, experimentation (3–5 hours/week).
 
-Month 1: Foundations and Basic Algorithms
-Goal: Master mathematical prerequisites and basic supervised learning algorithms.
+---
 
-Week 1: Mathematical Prerequisites
+## Month 1: Foundations and Basic Algorithms
 
-Goal: Build a foundation in linear algebra, calculus, and probability.
-Resources:
+### Week 1: Mathematical Prerequisites
 
-Mathematics for Machine Learning by Deisenroth et al. (Ch. 1–3, free PDF).
-Khan Academy: Linear Algebra, Calculus (free).
-3Blue1Brown YouTube: “Essence of Linear Algebra,” “Calculus” (free).
+**Goal:** Build a foundation in linear algebra, calculus, and probability.  
+**Resources:**
+- Mathematics for Machine Learning by Deisenroth et al. (Ch. 1–3, free PDF).
+- Khan Academy: Linear Algebra, Calculus (free).
+- 3Blue1Brown YouTube: “Essence of Linear Algebra,” “Calculus” (free).
 
+**Day-Wise Plan:**
 
-Day-Wise Plan:
+- **Day 1 (Mon):** Study vectors, matrices, dot products (Ch. 1). Watch 3Blue1Brown “Vectors” (2 hours).
+- **Day 2 (Tue):** Study matrix operations, determinants. Solve exercises (Khan Academy) (2.5 hours).
+- **Day 3 (Wed):** Study derivatives, partial derivatives (Ch. 2). Watch 3Blue1Brown “Derivatives” (2.5 hours).
+- **Day 4 (Thu):** Study probability, Bayes’ theorem (Ch. 3). Solve probability exercises (2.5 hours).
+- **Day 5 (Fri):** Code matrix operations (multiplication, inverse) in NumPy. Solve linear algebra exercises (2.5 hours).
+- **Day 6 (Sat):** Review weak areas, revisit Khan Academy problems (2.5 hours).
 
-Day 1 (Mon): Study vectors, matrices, dot products (Ch. 1). Watch 3Blue1Brown “Vectors” (2 hours).
-Day 2 (Tue): Study matrix operations, determinants. Solve exercises (Khan Academy) (2.5 hours).
-Day 3 (Wed): Study derivatives, partial derivatives (Ch. 2). Watch 3Blue1Brown “Derivatives” (2.5 hours).
-Day 4 (Thu): Study probability, Bayes’ theorem (Ch. 3). Solve probability exercises (2.5 hours).
-Day 5 (Fri): Code matrix operations (multiplication, inverse) in NumPy. Solve linear algebra exercises (2.5 hours).
-Day 6 (Sat): Review weak areas, revisit Khan Academy problems (2.5 hours).
+_Total Time: 15 hours._
 
+---
 
-Total Time: 15 hours.
+### Week 2: Linear Regression
 
+**Goal:** Understand and implement linear regression.  
+**Resources:**
+- Introduction to Statistical Learning (ISLR) by James et al. (Ch. 3, free PDF).
+- Andrew Ng’s Coursera ML course (Weeks 1–2, free audit).
+- Scikit-learn Linear Regression docs.
 
-Week 2: Linear Regression
+**Day-Wise Plan:**
 
-Goal: Understand and implement linear regression.
-Resources:
+- **Day 1 (Mon):** Study model, MSE, Normal Equation. Derive $ w = (X^TX)^{-1}X^Ty $ (2.5 hours).
+- **Day 2 (Tue):** Study Gradient Descent. Derive update rule. Watch Andrew Ng (2.5 hours).
+- **Day 3 (Wed):** Implement Linear Regression from scratch (NumPy) (2.5 hours).
+- **Day 4 (Thu):** Apply to Boston Housing dataset (scikit-learn). Plot predictions (2.5 hours).
+- **Day 5 (Fri):** Study Ridge regularization. Derive L2 penalty. Apply Ridge (scikit-learn) (2.5 hours).
+- **Day 6 (Sat):** Compare Linear vs. Ridge on Boston Housing. Document results (2.5 hours).
 
-Introduction to Statistical Learning (ISLR) by James et al. (Ch. 3, free PDF).
-Andrew Ng’s Coursera ML course (Weeks 1–2, free audit).
-Scikit-learn Linear Regression docs.
+_Total Time: 15 hours._
 
+---
 
-Day-Wise Plan:
+### Week 3: Logistic Regression and Naive Bayes
 
-Day 1 (Mon): Study model, MSE, Normal Equation. Derive $ w = (X^TX)^{-1}X^Ty $ (2.5 hours).
-Day 2 (Tue): Study Gradient Descent. Derive update rule. Watch Andrew Ng (2.5 hours).
-Day 3 (Wed): Implement Linear Regression from scratch (NumPy) (2.5 hours).
-Day 4 (Thu): Apply to Boston Housing dataset (scikit-learn). Plot predictions (2.5 hours).
-Day 5 (Fri): Study Ridge regularization. Derive L2 penalty. Apply Ridge (scikit-learn) (2.5 hours).
-Day 6 (Sat): Compare Linear vs. Ridge on Boston Housing. Document results (2.5 hours).
+**Goal:** Master classification algorithms.  
+**Resources:**
+- ISLR (Ch. 4).
+- Scikit-learn Logistic Regression, Naive Bayes docs.
+- StatQuest YouTube: “Logistic Regression,” “Naive Bayes” (free).
 
+**Day-Wise Plan:**
 
-Total Time: 15 hours.
+- **Day 1 (Mon):** Study Logistic Regression, sigmoid, cross-entropy. Derive loss (2.5 hours).
+- **Day 2 (Tue):** Implement Logistic Regression from scratch (NumPy) (2.5 hours).
+- **Day 3 (Wed):** Study Naive Bayes, Gaussian variant. Derive model (2.5 hours).
+- **Day 4 (Thu):** Implement Gaussian Naive Bayes from scratch (2.5 hours).
+- **Day 5 (Fri):** Apply Logistic Regression and Naive Bayes to Iris dataset (scikit-learn) (2.5 hours).
+- **Day 6 (Sat):** Analyze results, plot decision boundaries (2.5 hours).
 
+_Total Time: 15 hours._
 
-Week 3: Logistic Regression and Naive Bayes
+---
 
-Goal: Master classification algorithms.
-Resources:
+### Week 4: Evaluation Metrics and Consolidation
 
-ISLR (Ch. 4).
-Scikit-learn Logistic Regression, Naive Bayes docs.
-StatQuest YouTube: “Logistic Regression,” “Naive Bayes” (free).
+**Goal:** Learn evaluation techniques and consolidate basics.  
+**Resources:**
+- ISLR (Ch. 5).
+- Kaggle: “Model Evaluation Tutorial” (free).
+- Scikit-learn metrics docs.
 
+**Day-Wise Plan:**
 
-Day-Wise Plan:
+- **Day 1 (Mon):** Study regression metrics (MSE, RMSE, R²). Read ISLR (2.5 hours).
+- **Day 2 (Tue):** Study classification metrics (Accuracy, F1, ROC-AUC). Watch Kaggle tutorial (2.5 hours).
+- **Day 3 (Wed):** Evaluate Week 2–3 models with metrics (scikit-learn) (2.5 hours).
+- **Day 4 (Thu):** Mini-project: Apply Linear and Logistic Regression to Titanic dataset (2.5 hours).
+- **Day 5 (Fri):** Mini-project: Compare models, plot ROC curves (2.5 hours).
+- **Day 6 (Sat):** Document findings, write summary (2.5 hours).
 
-Day 1 (Mon): Study Logistic Regression, sigmoid, cross-entropy. Derive loss (2.5 hours).
-Day 2 (Tue): Implement Logistic Regression from scratch (NumPy) (2.5 hours).
-Day 3 (Wed): Study Naive Bayes, Gaussian variant. Derive model (2.5 hours).
-Day 4 (Thu): Implement Gaussian Naive Bayes from scratch (2.5 hours).
-Day 5 (Fri): Apply Logistic Regression and Naive Bayes to Iris dataset (scikit-learn) (2.5 hours).
-Day 6 (Sat): Analyze results, plot decision boundaries (2.5 hours).
+_Total Time: 15 hours._
 
+---
 
-Total Time: 15 hours.
+## Month 2: Intermediate Algorithms
 
+**Goal:** Understand tree-based models, SVMs, and unsupervised learning.
 
-Week 4: Evaluation Metrics and Consolidation
+### Week 5: Decision Trees and Random Forests
 
-Goal: Learn evaluation techniques and consolidate basics.
-Resources:
+**Goal:** Master tree-based models.  
+**Resources:**
+- ISLR (Ch. 8).
+- Hands-On Machine Learning by Géron (Ch. 6).
+- Scikit-learn Random Forest docs.
 
-ISLR (Ch. 5).
-Kaggle: “Model Evaluation Tutorial” (free).
-Scikit-learn metrics docs.
+**Day-Wise Plan:**
 
+- **Day 1 (Mon):** Study Decision Trees, Gini, Entropy. Derive Information Gain (2.5 hours).
+- **Day 2 (Tue):** Implement Decision Tree from scratch (Python) (2.5 hours).
+- **Day 3 (Wed):** Study Random Forests, bagging. Read Géron (2.5 hours).
+- **Day 4 (Thu):** Apply Random Forest to Wine dataset (scikit-learn) (2.5 hours).
+- **Day 5 (Fri):** Tune Random Forest (n_estimators, max_depth) (2.5 hours).
+- **Day 6 (Sat):** Compare Decision Tree vs. Random Forest. Document results (2.5 hours).
 
-Day-Wise Plan:
+_Total Time: 15 hours._
 
-Day 1 (Mon): Study regression metrics (MSE, RMSE, R²). Read ISLR (2.5 hours).
-Day 2 (Tue): Study classification metrics (Accuracy, F1, ROC-AUC). Watch Kaggle tutorial (2.5 hours).
-Day 3 (Wed): Evaluate Week 2–3 models with metrics (scikit-learn) (2.5 hours).
-Day 4 (Thu): Mini-project: Apply Linear and Logistic Regression to Titanic dataset (2.5 hours).
-Day 5 (Fri): Mini-project: Compare models, plot ROC curves (2.5 hours).
-Day 6 (Sat): Document findings, write summary (2.5 hours).
+---
 
+### Week 6: Support Vector Machines
 
-Total Time: 15 hours.
+**Goal:** Understand SVMs and kernels.  
+**Resources:**
+- ISLR (Ch. 9).
+- Pattern Recognition and Machine Learning by Bishop (Ch. 7).
+- StatQuest YouTube: “SVM” (free).
 
+**Day-Wise Plan:**
 
+- **Day 1 (Mon):** Study hard-margin SVM, derive objective. Watch StatQuest (2.5 hours).
+- **Day 2 (Tue):** Study soft-margin SVM, kernel trick. Derive dual form (2.5 hours).
+- **Day 3 (Wed):** Implement SVM with linear kernel (scikit-learn) (2.5 hours).
+- **Day 4 (Thu):** Apply SVM to downsampled MNIST (RBF kernel) (2.5 hours).
+- **Day 5 (Fri):** Compare linear vs. RBF kernels. Analyze results (2.5 hours).
+- **Day 6 (Sat):** Revisit Lagrange multipliers, document findings (2.5 hours).
 
-Month 2: Intermediate Algorithms
-Goal: Understand tree-based models, SVMs, and unsupervised learning.
+_Total Time: 15 hours._
 
-Week 5: Decision Trees and Random Forests
+---
 
-Goal: Master tree-based models.
-Resources:
+### Week 7: K-Means Clustering and KNN
 
-ISLR (Ch. 8).
-Hands-On Machine Learning by Géron (Ch. 6).
-Scikit-learn Random Forest docs.
+**Goal:** Master unsupervised and instance-based learning.  
+**Resources:**
+- ISLR (Ch. 10).
+- Géron’s book (Ch. 9).
+- Scikit-learn clustering docs.
 
+**Day-Wise Plan:**
 
-Day-Wise Plan:
+- **Day 1 (Mon):** Study K-Means, derive objective. Read ISLR (2.5 hours).
+- **Day 2 (Tue):** Implement K-Means from scratch (Python) (2.5 hours).
+- **Day 3 (Wed):** Study KNN, distance metrics. Read Géron (2.5 hours).
+- **Day 4 (Thu):** Implement KNN from scratch (Python) (2.5 hours).
+- **Day 5 (Fri):** Apply K-Means to Mall Customers dataset (scikit-learn) (2.5 hours).
+- **Day 6 (Sat):** Apply KNN to Iris dataset, compare with Naive Bayes (2.5 hours).
 
-Day 1 (Mon): Study Decision Trees, Gini, Entropy. Derive Information Gain (2.5 hours).
-Day 2 (Tue): Implement Decision Tree from scratch (Python) (2.5 hours).
-Day 3 (Wed): Study Random Forests, bagging. Read Géron (2.5 hours).
-Day 4 (Thu): Apply Random Forest to Wine dataset (scikit-learn) (2.5 hours).
-Day 5 (Fri): Tune Random Forest (n_estimators, max_depth) (2.5 hours).
-Day 6 (Sat): Compare Decision Tree vs. Random Forest. Document results (2.5 hours).
+_Total Time: 15 hours._
 
+---
 
-Total Time: 15 hours.
+### Week 8: Principal Component Analysis (PCA)
 
+**Goal:** Understand dimensionality reduction.  
+**Resources:**
+- ISLR (Ch. 10).
+- 3Blue1Brown YouTube: “Eigenvalues and Eigenvectors” (free).
+- Scikit-learn PCA docs.
 
-Week 6: Support Vector Machines
+**Day-Wise Plan:**
 
-Goal: Understand SVMs and kernels.
-Resources:
+- **Day 1 (Mon):** Study PCA, covariance matrix. Derive eigenvalue decomposition (2.5 hours).
+- **Day 2 (Tue):** Watch 3Blue1Brown, revisit PCA math (2.5 hours).
+- **Day 3 (Wed):** Implement PCA from scratch (NumPy) (2.5 hours).
+- **Day 4 (Thu):** Apply PCA to MNIST for visualization (scikit-learn) (2.5 hours).
+- **Day 5 (Fri):** Experiment with number of components, analyze variance (2.5 hours).
+- **Day 6 (Sat):** Document PCA results, summarize math (2.5 hours).
 
-ISLR (Ch. 9).
-Pattern Recognition and Machine Learning by Bishop (Ch. 7).
-StatQuest YouTube: “SVM” (free).
+_Total Time: 15 hours._
 
+---
 
-Day-Wise Plan:
+## Month 3: Advanced Algorithms and Projects
 
-Day 1 (Mon): Study hard-margin SVM, derive objective. Watch StatQuest (2.5 hours).
-Day 2 (Tue): Study soft-margin SVM, kernel trick. Derive dual form (2.5 hours).
-Day 3 (Wed): Implement SVM with linear kernel (scikit-learn) (2.5 hours).
-Day 4 (Thu): Apply SVM to downsampled MNIST (RBF kernel) (2.5 hours).
-Day 5 (Fri): Compare linear vs. RBF kernels. Analyze results (2.5 hours).
-Day 6 (Sat): Revisit Lagrange multipliers, document findings (2.5 hours).
+**Goal:** Master neural networks, ensemble methods, and apply skills to projects.
 
+### Week 9: Neural Networks (Feedforward)
 
-Total Time: 15 hours.
+**Goal:** Understand neural networks and backpropagation.  
+**Resources:**
+- Deep Learning by Goodfellow et al. (Ch. 6, free PDF).
+- Fast.ai: “Practical Deep Learning” (free).
+- PyTorch tutorials (free).
 
+**Day-Wise Plan:**
 
-Week 7: K-Means Clustering and KNN
+- **Day 1 (Mon):** Study neural network architecture, activations. Read Goodfellow (2.5 hours).
+- **Day 2 (Tue):** Derive backpropagation, chain rule. Watch Fast.ai (2.5 hours).
+- **Day 3 (Wed):** Implement neural network from scratch (NumPy) (2.5 hours).
+- **Day 4 (Thu):** Apply PyTorch to Fashion MNIST dataset (2.5 hours).
+- **Day 5 (Fri):** Tune layers, activation functions in PyTorch (2.5 hours).
+- **Day 6 (Sat):** Document results, revisit backpropagation math (2.5 hours).
 
-Goal: Master unsupervised and instance-based learning.
-Resources:
+_Total Time: 15 hours._
 
-ISLR (Ch. 10).
-Géron’s book (Ch. 9).
-Scikit-learn clustering docs.
+---
 
+### Week 10: Gradient Boosting (XGBoost, LightGBM)
 
-Day-Wise Plan:
+**Goal:** Master ensemble boosting methods.  
+**Resources:**
+- XGBoost documentation (free).
+- Géron’s book (Ch. 7).
+- Kaggle: “XGBoost Tutorial” (free).
 
-Day 1 (Mon): Study K-Means, derive objective. Read ISLR (2.5 hours).
-Day 2 (Tue): Implement K-Means from scratch (Python) (2.5 hours).
-Day 3 (Wed): Study KNN, distance metrics. Read Géron (2.5 hours).
-Day 4 (Thu): Implement KNN from scratch (Python) (2.5 hours).
-Day 5 (Fri): Apply K-Means to Mall Customers dataset (scikit-learn) (2.5 hours).
-Day 6 (Sat): Apply KNN to Iris dataset, compare with Naive Bayes (2.5 hours).
+**Day-Wise Plan:**
 
+- **Day 1 (Mon):** Study boosting, additive modeling. Read XGBoost docs (2.5 hours).
+- **Day 2 (Tue):** Derive XGBoost objective, second-order gradients (2.5 hours).
+- **Day 3 (Wed):** Apply XGBoost to House Prices dataset (Kaggle) (2.5 hours).
+- **Day 4 (Thu):** Tune XGBoost (learning rate, max_depth) (2.5 hours).
+- **Day 5 (Fri):** Compare XGBoost vs. Random Forest on same dataset (2.5 hours).
+- **Day 6 (Sat):** Document results, summarize boosting math (2.5 hours).
 
-Total Time: 15 hours.
+_Total Time: 15 hours._
 
+---
 
-Week 8: Principal Component Analysis (PCA)
+### Week 11: Capstone Project (Part 1)
 
-Goal: Understand dimensionality reduction.
-Resources:
+**Goal:** Apply multiple algorithms to a real-world dataset.  
+**Resources:**
+- Kaggle datasets and notebooks (free).
+- Scikit-learn, XGBoost, PyTorch docs.
 
-ISLR (Ch. 10).
-3Blue1Brown YouTube: “Eigenvalues and Eigenvectors” (free).
-Scikit-learn PCA docs.
+**Day-Wise Plan:**
 
+- **Day 1 (Mon):** Select Kaggle dataset, preprocess (handle missing values, encode) (2.5 hours).
+- **Day 2 (Tue):** Apply Logistic Regression and Random Forest (2.5 hours).
+- **Day 3 (Wed):** Apply XGBoost, evaluate with cross-validation (2.5 hours).
+- **Day 4 (Thu):** Compare model performance (metrics, plots) (2.5 hours).
+- **Day 5 (Fri):** Document initial results, identify best model (2.5 hours).
+- **Day 6 (Sat):** Explore feature importance, refine preprocessing (2.5 hours).
 
-Day-Wise Plan:
+_Total Time: 15 hours._
 
-Day 1 (Mon): Study PCA, covariance matrix. Derive eigenvalue decomposition (2.5 hours).
-Day 2 (Tue): Watch 3Blue1Brown, revisit PCA math (2.5 hours).
-Day 3 (Wed): Implement PCA from scratch (NumPy) (2.5 hours).
-Day 4 (Thu): Apply PCA to MNIST for visualization (scikit-learn) (2.5 hours).
-Day 5 (Fri): Experiment with number of components, analyze variance (2.5 hours).
-Day 6 (Sat): Document PCA results, summarize math (2.5 hours).
+---
 
+### Week 12: Capstone Project (Part 2) and Review
 
-Total Time: 15 hours.
+**Goal:** Optimize models and review all concepts.  
+**Resources:**
+- Kaggle tutorials on ensemble methods.
+- ISLR, Géron’s book for review.
 
+**Day-Wise Plan:**
 
+- **Day 1 (Mon):** Optimize models (try stacking, feature engineering) (2.5 hours).
+- **Day 2 (Tue):** Finalize project, improve best model (2.5 hours).
+- **Day 3 (Wed):** Write project report or create presentation (2.5 hours).
+- **Day 4 (Thu):** Review Linear Regression, Logistic, SVM math (2.5 hours).
+- **Day 5 (Fri):** Review Neural Networks, XGBoost derivations (2.5 hours).
+- **Day 6 (Sat):** Revisit weak areas, summarize learnings (2.5 hours).
 
-Month 3: Advanced Algorithms and Projects
-Goal: Master neural networks, ensemble methods, and apply skills to projects.
+_Total Time: 15 hours._
 
-Week 9: Neural Networks (Feedforward)
+---
 
-Goal: Understand neural networks and backpropagation.
-Resources:
+## Minimum Weekly Hours
 
-Deep Learning by Goodfellow et al. (Ch. 6, free PDF).
-Fast.ai: “Practical Deep Learning” (free).
-PyTorch tutorials (free).
+**Total:** 15–20 hours/week (~2–3 hours/day, 5–6 days/week).
 
+**Breakdown:**
 
-Day-Wise Plan:
+- Theory/Mathematics: 6–8 hours.
+- Coding: 5–7 hours.
+- Practice/Projects: 3–5 hours.
 
-Day 1 (Mon): Study neural network architecture, activations. Read Goodfellow (2.5 hours).
-Day 2 (Tue): Derive backpropagation, chain rule. Watch Fast.ai (2.5 hours).
-Day 3 (Wed): Implement neural network from scratch (NumPy) (2.5 hours).
-Day 4 (Thu): Apply PyTorch to Fashion MNIST dataset (2.5 hours).
-Day 5 (Fri): Tune layers, activation functions in PyTorch (2.5 hours).
-Day 6 (Sat): Document results, revisit backpropagation math (2.5 hours).
-
-
-Total Time: 15 hours.
-
-
-Week 10: Gradient Boosting (XGBoost, LightGBM)
-
-Goal: Master ensemble boosting methods.
-Resources:
-
-XGBoost documentation (free).
-Géron’s book (Ch. 7).
-Kaggle: “XGBoost Tutorial” (free).
-
-
-Day-Wise Plan:
-
-Day 1 (Mon): Study boosting, additive modeling. Read XGBoost docs (2.5 hours).
-Day 2 (Tue): Derive XGBoost objective, second-order gradients (2.5 hours).
-Day 3 (Wed): Apply XGBoost to House Prices dataset (Kaggle) (2.5 hours).
-Day 4 (Thu): Tune XGBoost (learning rate, max_depth) (2.5 hours).
-Day 5 (Fri): Compare XGBoost vs. Random Forest on same dataset (2.5 hours).
-Day 6 (Sat): Document results, summarize boosting math (2.5 hours).
-
-
-Total Time: 15 hours.
-
-
-Week 11: Capstone Project (Part 1)
-
-Goal: Apply multiple algorithms to a real-world dataset.
-Resources:
-
-Kaggle datasets and notebooks (free).
-Scikit-learn, XGBoost, PyTorch docs.
-
-
-Day-Wise Plan:
-
-Day 1 (Mon): Select Kaggle dataset, preprocess (handle missing values, encode) (2.5 hours).
-Day 2 (Tue): Apply Logistic Regression and Random Forest (2.5 hours).
-Day 3 (Wed): Apply XGBoost, evaluate with cross-validation (2.5 hours).
-Day 4 (Thu): Compare model performance (metrics, plots) (2.5 hours).
-Day 5 (Fri): Document initial results, identify best model (2.5 hours).
-Day 6 (Sat): Explore feature importance, refine preprocessing (2.5 hours).
-
-
-Total Time: 15 hours.
-
-
-Week 12: Capstone Project (Part 2) and Review
-
-Goal: Optimize models and review all concepts.
-Resources:
-
-Kaggle tutorials on ensemble methods.
-ISLR, Géron’s book for review.
-
-
-Day-Wise Plan:
-
-Day 1 (Mon): Optimize models (try stacking, feature engineering) (2.5 hours).
-Day 2 (Tue): Finalize project, improve best model (2.5 hours).
-Day 3 (Wed): Write project report or create presentation (2.5 hours).
-Day 4 (Thu): Review Linear Regression, Logistic, SVM math (2.5 hours).
-Day 5 (Fri): Review Neural Networks, XGBoost derivations (2.5 hours).
-Day 6 (Sat): Revisit weak areas, summarize learnings (2.5 hours).
-
-
-Total Time: 15 hours.
-
-
-
-
-Minimum Weekly Hours
-
-Total: 15–20 hours/week (~2–3 hours/day, 5–6 days/week).
-Breakdown:
-
-Theory/Mathematics: 6–8 hours.
-Coding: 5–7 hours.
-Practice/Projects: 3–5 hours.
-
-
-Flexibility: If 15–20 hours is too intensive, extend to 4–5 months. If you have 25–30 hours/week, add more datasets or explore advanced topics (e.g., deep learning variants).
-
+**Flexibility:** If 15–20 hours is too intensive, extend to 4–5 months.  
+If you have 25–30 hours/week, add more datasets or explore advanced topics (e.g., deep learning variants).
