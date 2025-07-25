@@ -6,58 +6,46 @@ The algorithms are categorized into basic, intermediate, and advanced, with thei
 
 ## Basic Algorithms (Supervised Learning)
 
-- **Linear Regression:** $ y = w^Tx + b $, minimize MSE  
-  $$
-  J(w) = \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)^2
-  $$
+- **Linear Regression:**  
+  y = wᵀx + b, minimize MSE:  
+  J(w) = (1/m) Σ (yᵢ - ŷᵢ)²
 
-- **Logistic Regression:** $ P(y=1|x) = \sigma(w^Tx) $, minimize cross-entropy loss.
+- **Logistic Regression:**  
+  P(y=1|x) = σ(wᵀx), minimize cross-entropy loss
 
 - **Naive Bayes:**  
-  $$
-  P(y|x) \propto P(y) \prod_{i=1}^n P(x_i|y)
-  $$
+  P(y|x) ∝ P(y) ∏ P(xᵢ|y)
 
 ## Intermediate Algorithms
 
 - **Decision Trees:**  
-  $$
-  H = -\sum_{i=1}^k p_i \log(p_i)
-  $$
-  Information Gain.
+  Entropy: H = -Σ pᵢ log(pᵢ)  
+  Information Gain
 
-- **Random Forests:** Ensemble via bagging, variance reduction.
+- **Random Forests:**  
+  Ensemble via bagging, variance reduction
 
-- **Support Vector Machines (SVM):** Maximize margin  
-  $$
-  \frac{2}{||w||}
-  $$
-  Kernel trick $ K(x_i, x_j) $.
+- **Support Vector Machines (SVM):**  
+  Maximize margin: 2 / ||w||  
+  Kernel trick: K(xᵢ, xⱼ)
 
 ## Advanced Algorithms
 
-- **K-Nearest Neighbors (KNN):** Euclidean distance  
-  $$
-  d(x, y) = \sqrt{\sum_{i=1}^n (x_i - y_i)^2}
-  $$
+- **K-Nearest Neighbors (KNN):**  
+  Euclidean distance: d(x, y) = sqrt(Σ (xᵢ - yᵢ)²)
 
-- **K-Means Clustering:** Minimize  
-  $$
-  J = \sum_{i=1}^k \sum_{x \in C_i} ||x - \mu_i||^2
-  $$
+- **K-Means Clustering:**  
+  Minimize: J = Σₖ Σ_{x ∈ Cₖ} ||x - μₖ||²
 
-- **Principal Component Analysis (PCA):** Eigenvalue decomposition of covariance matrix.
+- **Principal Component Analysis (PCA):**  
+  Eigenvalue decomposition of covariance matrix
 
-- **Neural Networks:** Backpropagation,  
-  $$
-  \frac{\partial L}{\partial w}
-  $$
-  via chain rule.
+- **Neural Networks:**  
+  Backpropagation, ∂L/∂w via chain rule
 
-- **Gradient Boosting (XGBoost, LightGBM):** Minimize  
-  $$
-  L = \sum_{i=1}^m l(y_i, \hat{y}_i) + \Omega(f)
-  $$
+- **Gradient Boosting (XGBoost, LightGBM):**  
+  Minimize: L = Σ l(yᵢ, ŷᵢ) + Ω(f)
+
 
 ---
 
